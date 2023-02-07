@@ -3,20 +3,19 @@ from card_evaluator import Card
 
 
 def main():
-    hand = []
-    for i in range(5):
+    cards = []
+    while len(cards) < 5:
+        card_string = input("Enter a card (e.g 'Ace of Spades'): ")
         try:
-            card_string = input(f"Enter card {i + 1}: ")
             card = Card.from_string(card_string)
-            hand.append(card)
-        except ValueError as e:
-            print("Invalid card format:", e)
-        except KeyError as e:
-            print("Invalid rank or suit:", e)
+            if card.suit not in Card.suits:
+                raise ValueError(f"Invalid suit '{card.suit}'")
+            cards.append(card)
+        except Exception as e:
+            print(f"Error: {e}")
 
-    hand = Hand(hand)
-    ranking = hand.evaluate()
-    print(f"Hand ranking: {ranking}")
+    hand = Hand(cards)
+    print(f"Hand ranking: {hand.evaluate()}")
 
 
 if __name__ == "__main__":

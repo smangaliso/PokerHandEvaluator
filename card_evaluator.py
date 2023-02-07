@@ -4,21 +4,7 @@ class Card:
     suits = ['Spades', 'Clubs', 'Hearts', 'Diamonds']
 
     def __init__(self, rank, suit):
-
-        if rank == "Ace" or rank == "A":
-            self.rank = 1
-
-        elif rank == "Jack" or rank == "J":
-            self.rank = 11
-
-        elif rank == "Queen" or rank == "Q":
-            self.rank = 12
-
-        elif rank == "King" or rank == "Q":
-            self.rank = 13
-
-        else:
-            self.rank = rank
+        self.rank = rank
         self.suit = suit
 
     @classmethod
