@@ -6,15 +6,19 @@ this software tool evaluates a poker hand. it allows a user to submit 5 cards an
 
 1. Install the dependencies:
 
-`pip install -r requirements.txt`
+    `pip install -r requirements.txt`
 
 2. Start the development server:
-`python server.py`
+
+    `python server.py`
 
 2.1 Alternatively run:
-`python main.py`
 
-3. if you started the development server, the API will be available at `http://localhost:5000`.
+    `python main.py`
+
+3. if you started the development server, the API will be available at:
+
+    `http://localhost:5000`.
 
 <h3>Endpoint</h3>
 `/evaluate-hand`: Evaluates the ranking of a hand of cards
@@ -31,7 +35,8 @@ Example input:
 }`
 
 for 2.1 the following is the Example input:
-`Ace of Spades`
+
+    `Ace of Spades`
 
 <h3>Output</h3>
 The output for the endpoint is in JSON object with the ranking of the hand
@@ -47,9 +52,11 @@ Error Handling If the input is invalid, the API will return a JSON object with a
 Also with 2.1 if the input is invalid it will return a message, and prompt you to enter the card again.
 
 Example error output:
-`{
-"error": "Invalid input, must have exactly 5 cards"
-}`
+
+    `{
+    "error": "Invalid input, must have exactly 5 cards"
+    }`
 
 2.1 error output:
-`Error: not enough values to unpack (expected 2, got 1)`
+
+    `Error: not enough values to unpack (expected 2, got 1)`
